@@ -12,11 +12,14 @@ namespace Assignment1
         {
             string stationName = args[0];
 
-            // If station name has more than one word
+            // If station name has more than one word -> Combine station name/arguments into one
 
-            if (args[1] != "realtime" && args[1] != "offline")
+            if (args.Length > 2)    //If more than two arguments
             {
-                stationName = args[0] + " " + args[1];
+                for (int i = 1; i < args.Length - 1; i++)
+                {
+                        stationName += " " + args[i];
+                }
             }
 
             try
@@ -34,11 +37,15 @@ namespace Assignment1
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine("Invalid argument: " + ex);
+                Console.WriteLine("Invalid argument: " + ex.Message);
             }
             catch (NotFoundException ex)
             {
-                Console.WriteLine("Invalid argument: " + ex);
+                Console.WriteLine("Not found: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }

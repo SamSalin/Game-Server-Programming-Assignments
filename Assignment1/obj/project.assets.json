@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Assignment1\\Assignment1.csproj",
+      "projectUniqueName": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment1\\Assignment1.csproj",
       "projectName": "Assignment1",
-      "projectPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Assignment1\\Assignment1.csproj",
+      "projectPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment1\\Assignment1.csproj",
       "packagesPath": "C:\\Users\\Hemul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Assignment1\\obj\\",
+      "outputPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hemul\\AppData\\Roaming\\NuGet\\NuGet.Config"

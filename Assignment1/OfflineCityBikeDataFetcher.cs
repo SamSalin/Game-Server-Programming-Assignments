@@ -14,26 +14,26 @@ public class OfflineCityBikeFetcher : ICityBikeDataFetcher
             throw new ArgumentException();
         }
 
-        string[] lines = File.ReadAllLines(@"bikedata.txt");
+        string[] lines = File.ReadAllLines(@"bikedata.txt");    //Read bikedata.txt
         int bikeAmount = 0;
         bool stationFound = false;
 
         for (int i = 0; i < lines.Length; i++)
         {
-            string[] splitLine = lines[i].Split(":");
+            string[] splitLine = lines[i].Split(":");           //Split individual line into two
 
-            if (splitLine[0].Trim() == stationName)
+            if (splitLine[0].Trim() == stationName)             //Trim to remove whitespace
             {
                 stationFound = true;
                 String bikeAmountString = splitLine[1].Trim();
-                bikeAmount = Int32.Parse(bikeAmountString);
+                bikeAmount = Int32.Parse(bikeAmountString);     //Convert String to int
                 break;
             }
         }
 
         if(!stationFound)
         {
-            throw new NotFoundException();
+            throw new NotFoundException("Station not found!");
         }
 
         return await Task.FromResult(bikeAmount);

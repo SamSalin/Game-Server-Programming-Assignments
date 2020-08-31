@@ -22,8 +22,8 @@ public class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
         string url = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
 
         HttpClient client = new HttpClient();
-        asemaLista = JsonConvert.DeserializeObject<BikeRentalStationList>(await client.GetStringAsync(url));
-
+        asemaLista = JsonConvert.DeserializeObject<BikeRentalStationList>(await client.GetStringAsync(url));    //Parse JSON into a readable format
+    
         for (int i = 0; i < asemaLista.stations.Count; i++)
         {
             if (asemaLista.stations[i].name == stationName)
@@ -35,7 +35,7 @@ public class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
 
         if(!stationFound)
         {
-            throw new NotFoundException();
+            throw new NotFoundException("Station not found!");
         }
 
         return bikesAvailable;
