@@ -18,7 +18,7 @@ namespace Assignment1
             {
                 for (int i = 1; i < args.Length - 1; i++)
                 {
-                        stationName += " " + args[i];
+                    stationName += " " + args[i];
                 }
             }
 
