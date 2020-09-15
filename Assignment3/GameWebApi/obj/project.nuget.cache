@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4fkFnN7rmitPAC4X3QL+t3LFHC1zyreEWbrKPd7Enw9RkDJ1qkJahypUyOU6IzRsbBXBw4V7sbJiNdDWquYEtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3\\GameWebApi\\GameWebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hemul\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
