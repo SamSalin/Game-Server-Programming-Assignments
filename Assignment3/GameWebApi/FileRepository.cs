@@ -16,16 +16,14 @@ namespace GameWebApi
 
             for (int i = 0; i < lines.Length; i++)
             {
-                player = JsonConvert.DeserializeObject<Player>(lines[i]);
+                player = JsonConvert.DeserializeObject<Player>(lines[i]);   //Deserialize lines to Player objects
 
                 if (player.Id == id)
                 {
-                    Console.WriteLine("Löytyi!");
                     return Task.FromResult<Player>(player);
                 }
             }
 
-            Console.WriteLine("Ei löytynyt!");
             return Task.FromResult<Player>(null);
         }
 
@@ -57,22 +55,24 @@ namespace GameWebApi
         public Task<Player> Modify(Guid id, ModifiedPlayer player)
         {
             string[] lines = File.ReadAllLines(@"game-dev.txt");
+            List<string> newLines = new List<string>();
             Player oldPlayer = new Player();
-            Console.WriteLine(id);
+
+            //Rewrite all the lines and modify the one line with new data
 
             for (int i = 0; i < lines.Length; i++)
             {
                 oldPlayer = JsonConvert.DeserializeObject<Player>(lines[i]);
-                Console.WriteLine(oldPlayer.Id);
 
                 if (oldPlayer.Id == id)
                 {
-                    Console.WriteLine(player.Score);
                     oldPlayer.Score = player.Score;
-                    break;
                 }
+
+                newLines.Add(JsonConvert.SerializeObject(oldPlayer));
             }
 
+            File.WriteAllLines("game-dev.txt", newLines.ToArray());
             return Task.FromResult(oldPlayer);
         }
 
@@ -83,7 +83,7 @@ namespace GameWebApi
             Player[] players = new Player[lines.Length];
             Player player = new Player();
 
-            //Rewrite all the lines that are not the deleted player
+            //Rewrite all the lines except the line that is the player to be deleted
 
             for (int i = 0; i < lines.Length; i++)
             {

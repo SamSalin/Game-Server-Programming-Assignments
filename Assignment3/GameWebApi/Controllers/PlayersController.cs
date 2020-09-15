@@ -11,52 +11,47 @@ namespace GameWebApi.Controllers
     [Route("[controller]")]
     public class PlayersController : ControllerBase
     {
-
         private readonly IRepository _repo;
-
         public PlayersController(IRepository fileRepository)
         {
             _repo = fileRepository;
         }
 
         [HttpGet("/players/{id}")]
-        public async Task<Player> Get(string id)
+        public Task<Player> Get(Guid id)
         {
-            Guid g = Guid.Parse(id);
-            return await _repo.Get(g);
+            return _repo.Get(id);
         }
 
         [HttpGet("/players/all")]
-        public async Task<Player[]> GetAll()
+        public Task<Player[]> GetAll()
         {
-            return await _repo.GetAll();
+            return _repo.GetAll();
         }
 
         [HttpPost("/players/create")]
-        public async Task<Player> Create(NewPlayer player)
+        public Task<Player> Create(NewPlayer player)
         {
             Player newPlayer = new Player()
             {
                 Name = player.Name,
                 Id = Guid.NewGuid(),
-                CreationTime = DateTime.Today
+                CreationTime = DateTime.Now
             };
 
-            return await _repo.Create(newPlayer);
+            return _repo.Create(newPlayer);
         }
 
         [HttpPut("/players/modify/{id}")]
-        public async Task<Player> Modify(string id, ModifiedPlayer player)
+        public Task<Player> Modify(Guid id, ModifiedPlayer player)
         {
-            Guid g = Guid.Parse(id);
-            return await _repo.Modify(g, player);
+            return _repo.Modify(id, player);
         }
 
         [HttpDelete("/players/delete/{id}")]
-        public async Task<Player> Delete(string id)
+        public Task<Player> Delete(Guid id)
         {
-            Guid g = Guid.Parse(id);
-            return await _repo.Delete(g);
+            return _repo.Delete(id);
         }
     }
 }

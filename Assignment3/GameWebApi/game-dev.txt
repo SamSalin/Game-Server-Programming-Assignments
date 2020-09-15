@@ -1,3 +1,5 @@
-{"Id":"99868dd3-58d0-4f3d-9be8-1a3f6932c1e1","Name":"Jukka","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
+{"Id":"99868dd3-58d0-4f3d-9be8-1a3f6932c1e1","Name":"Jukka","Score":10000,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
 {"Id":"903b70cf-9beb-4d83-a7d8-02a761863ee5","Name":"Gruesome_Gill","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
-{"Id":"f3d3337c-e0f9-4d80-b0ec-29ea778bbdea","Name":"Ville-Pekka","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
+{"Id":"736f8f3e-d37d-4994-ba0d-1784cc9323b7","Name":"Tapani","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T00:00:00+03:00"}
+{"Id":"60562c25-976d-49e9-a694-35ceaca836ec","Name":"The_Inhabitant","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T00:00:00+03:00"}
+{"Id":"aca3fcae-0ce1-4395-85bd-dec399b0b9da","Name":"L33tM4n","Score":120,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T18:36:36.667265+03:00"}
