@@ -11,9 +11,11 @@ namespace GameWebApi
         [Range(1, 99, ErrorMessage = "Incorrect Value! Values between {1} and {2} allowed.")]
         public int Level { get; set; }
 
+
+        [EnumDataType(typeof(ItemType), ErrorMessage = "Invalid ItemType")]
+        [Range(0, 2)]
         public ItemType Type { get; set; }
 
-        [DataType(DataType.Date)]
         [DateValidation]
         public DateTime CreationDate { get; set; }
     }

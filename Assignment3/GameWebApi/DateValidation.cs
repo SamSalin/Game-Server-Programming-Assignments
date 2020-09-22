@@ -11,9 +11,9 @@ namespace GameWebApi
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var givenDate = (DateTime)value;
+            NewItem item = (NewItem)validationContext.ObjectInstance;
 
-            if (givenDate < DateTime.Today)
+            if (item.CreationDate != DateTime.Today)
             {
                 return new ValidationResult(GetErrorMessage());
             }

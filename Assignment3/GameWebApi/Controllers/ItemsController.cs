@@ -24,10 +24,10 @@ namespace GameWebApi.Controllers
                 Id = Guid.NewGuid(),
                 Level = item.Level,
                 Type = item.Type,
-                CreationDate = DateTime.Now
-                //CreationDate = new DateTime(2009, 8, 1, 0, 0, 0) 
+                CreationDate = DateTime.Today
+                //CreationDate = new DateTime(2009, 8, 1, 0, 0, 0)
             };
-
+            Console.WriteLine("LOLOLOL");
             return _repo.CreateItem(playerId, newItem);
         }
         [HttpGet("/players/{playerId}/items/get/{itemId}")]
@@ -50,7 +50,7 @@ namespace GameWebApi.Controllers
                 Id = itemId,
                 Level = modifiedItem.Level,
                 Type = modifiedItem.Type,
-                CreationDate = DateTime.Now
+                CreationDate = DateTime.Today
             };
 
             return _repo.UpdateItem(playerId, newItem);

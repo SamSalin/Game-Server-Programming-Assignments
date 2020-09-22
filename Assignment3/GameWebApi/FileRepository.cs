@@ -106,7 +106,6 @@ namespace GameWebApi
         public Task<Item> CreateItem(Guid playerId, Item item)
         {
             bool playerFound = false;
-
             string[] lines = File.ReadAllLines(@"game-dev.txt");
             List<string> newLines = new List<string>();
             Player player = new Player();

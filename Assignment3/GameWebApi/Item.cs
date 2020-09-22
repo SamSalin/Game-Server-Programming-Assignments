@@ -23,7 +23,7 @@ namespace GameWebApi
         [Range(0, 2)]
         public ItemType Type { get; set; }
 
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         [DateValidation]
         public DateTime CreationDate { get; set; }
     }

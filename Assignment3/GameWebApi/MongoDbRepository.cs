@@ -30,8 +30,16 @@ namespace GameWebApi
             var filter = Builders<Player>.Filter.Eq(p => p.Id, playerId);
             var add = Builders<Player>.Update.AddToSet("PlayerItems", item);
 
-            Player player = await _playerCollection.FindOneAndUpdateAsync(filter, add);
-            return item;
+            if (!_playerCollection.Find(filter).Any())
+            {
+                throw new NotFoundException();
+            }
+            else
+            {
+                Player player = await _playerCollection.FindOneAndUpdateAsync(filter, add);
+                return item;
+            }
+
         }
 
         public async Task<Player> Delete(Guid id)
@@ -54,15 +62,7 @@ namespace GameWebApi
         public async Task<Player> Get(Guid id)
         {
             var filter = Builders<Player>.Filter.Eq("Id", id);
-
-            if (!_playerCollection.Find(filter).Any())
-            {
-                throw new NotFoundException();
-            }
-            else
-            {
-                return await _playerCollection.Find(filter).FirstAsync();
-            }
+            return await _playerCollection.Find(filter).FirstAsync();
 
         }
 
