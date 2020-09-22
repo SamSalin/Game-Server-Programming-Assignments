@@ -4835,11 +4835,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3\\GameWebApi\\GameWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3-4\\GameWebApi\\GameWebApi.csproj",
       "projectName": "GameWebApi",
-      "projectPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3\\GameWebApi\\GameWebApi.csproj",
+      "projectPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3-4\\GameWebApi\\GameWebApi.csproj",
       "packagesPath": "C:\\Users\\Hemul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3\\GameWebApi\\obj\\",
+      "outputPath": "C:\\Users\\Hemul\\Desktop\\GameServerProgrammingAssignments\\Game-Server-Programming-Assignments\\Assignment3-4\\GameWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hemul\\AppData\\Roaming\\NuGet\\NuGet.Config"
