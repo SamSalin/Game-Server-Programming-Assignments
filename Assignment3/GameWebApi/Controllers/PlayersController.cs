@@ -36,7 +36,8 @@ namespace GameWebApi.Controllers
             {
                 Name = player.Name,
                 Id = Guid.NewGuid(),
-                CreationTime = DateTime.Now
+                CreationTime = DateTime.Now,
+                PlayerItems = new List<Item>()
             };
 
             return _repo.Create(newPlayer);

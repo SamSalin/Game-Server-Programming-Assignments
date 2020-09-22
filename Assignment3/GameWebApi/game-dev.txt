@@ -1,5 +1,4 @@
-{"Id":"99868dd3-58d0-4f3d-9be8-1a3f6932c1e1","Name":"Jukka","Score":10000,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
-{"Id":"903b70cf-9beb-4d83-a7d8-02a761863ee5","Name":"Gruesome_Gill","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-08T00:00:00+03:00"}
-{"Id":"736f8f3e-d37d-4994-ba0d-1784cc9323b7","Name":"Tapani","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T00:00:00+03:00"}
-{"Id":"60562c25-976d-49e9-a694-35ceaca836ec","Name":"The_Inhabitant","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T00:00:00+03:00"}
-{"Id":"aca3fcae-0ce1-4395-85bd-dec399b0b9da","Name":"L33tM4n","Score":120,"Level":0,"IsBanned":false,"CreationTime":"2020-09-15T18:36:36.667265+03:00"}
+{"Id":"8a3a769b-3cd8-436d-ba39-906e78c7c619","Name":"Beastboy","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-16T13:26:35.2156532+03:00","PlayerItems":[]}
+{"Id":"42893fe9-1a9c-4c08-a7ea-0196c83a420e","Name":"T33muN4t0r","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-16T13:26:47.229737+03:00","PlayerItems":[]}
+{"Id":"0654a205-bb1b-4bd2-9094-40d1360570f8","Name":"JuhisMuhisTheMainKuhis","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-16T13:26:57.2462071+03:00","PlayerItems":[]}
+{"Id":"7a17d4c0-f928-443a-86c1-f3a97787bdaf","Name":"B4dB0y17","Score":0,"Level":0,"IsBanned":false,"CreationTime":"2020-09-16T13:27:03.6780671+03:00","PlayerItems":[]}
