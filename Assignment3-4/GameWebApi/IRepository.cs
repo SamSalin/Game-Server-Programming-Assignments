@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace GameWebApi
 {
@@ -9,6 +10,18 @@ namespace GameWebApi
         Task<Player> Create(Player player);
         Task<Player> Modify(Guid id, ModifiedPlayer player);
         Task<Player> Delete(Guid id);
+
+        //---------Queries------------
+
+        Task<List<Player>> GetPlayersMinScore(int minScore);
+
+        Task<List<Player>> GetPlayersByItemListSize(int amountOfItems);
+        Task<Player> UpdatePlayerName(Guid id, string name);
+        Task<Item> CreateItemQuery(Guid playerId, Item item);
+        Task<List<Player>> GetPlayersByDescendingScore();
+
+        //----------------------------
+
 
         Task<Item> CreateItem(Guid playerId, Item item);
         Task<Item> GetItem(Guid playerId, Guid itemId);

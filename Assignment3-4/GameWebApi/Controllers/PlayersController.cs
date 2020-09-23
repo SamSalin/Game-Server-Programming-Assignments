@@ -54,5 +54,33 @@ namespace GameWebApi.Controllers
         {
             return _repo.Delete(id);
         }
+
+        //---------Queries------------
+
+        [HttpGet("/players")]
+        public Task<List<Player>> GetPlayersMinScore([FromQuery] int minScore)
+        {
+            return _repo.GetPlayersMinScore(minScore);
+        }
+
+        [HttpPut("/players/{id}/updatename")]
+        public Task<Player> UpdatePlayerName(Guid id, [FromQuery] string name)
+        {
+            return _repo.UpdatePlayerName(id, name);
+        }
+
+        [HttpGet("/players/items")]
+        public Task<List<Player>> GetPlayersByItemListSize([FromQuery] int numOfItems)
+        {
+            return _repo.GetPlayersByItemListSize(numOfItems);
+        }
+
+        [HttpGet("/players/descendingscore")]
+        public Task<List<Player>> GetPlayersByDescendingScore()
+        {
+            return _repo.GetPlayersByDescendingScore();
+        }
+
+        //----------------------------
     }
 }

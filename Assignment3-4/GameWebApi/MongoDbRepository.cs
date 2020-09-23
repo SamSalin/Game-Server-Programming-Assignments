@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
@@ -111,5 +112,57 @@ namespace GameWebApi
             Item getItem = await GetItem(playerId, item.Id);
             return getItem;
         }
+
+        //---------Queries------------
+
+        public async Task<List<Player>> GetPlayersMinScore(int minScore)
+        {
+            FilterDefinition<Player> filter = Builders<Player>.Filter.Gte("Score", minScore);
+            List<Player> players = await _playerCollection.Find(filter).ToListAsync();
+
+            return players;
+        }
+
+        public async Task<List<Player>> GetPlayersByItemListSize(int amountOfItems)
+        {
+            var filter = Builders<Player>.Filter.Size(p => p.PlayerItems, amountOfItems);
+            List<Player> players = await _playerCollection.Find(filter).ToListAsync();
+
+            return players;
+        }
+
+        public async Task<Player> UpdatePlayerName(Guid id, string name)
+        {
+            var filter = Builders<Player>.Filter.Eq(p => p.Id, id);
+            var update = Builders<Player>.Update.Set(p => p.Name, name);
+
+            var options = new FindOneAndUpdateOptions<Player>()
+            {
+                ReturnDocument = ReturnDocument.After
+            };
+            return await _playerCollection.FindOneAndUpdateAsync(filter, update, options);
+        }
+
+        public async Task<Item> CreateItemQuery(Guid playerId, Item item)
+        {
+            var filter = Builders<Player>.Filter.Eq(p => p.Id, playerId);
+            var push = Builders<Player>.Update.Push("PlayerItems", item);
+
+            await _playerCollection.FindOneAndUpdateAsync(filter, push);
+            return item;
+        }
+
+        public async Task<List<Player>> GetPlayersByDescendingScore()
+        {
+            var filter = Builders<Player>.Filter.Empty;
+            SortDefinition<Player> sortDef = Builders<Player>.Sort.Descending("Score");
+            IFindFluent<Player, Player> cursor = _playerCollection.Find(filter).Sort(sortDef).Limit(10);
+
+            List<Player> players = await cursor.ToListAsync();
+            return players;
+
+        }
+
+        //----------------------------
     }
 }

@@ -233,5 +233,30 @@ namespace GameWebApi
             File.WriteAllLines("game-dev.txt", newLines.ToArray());
             return Task.FromResult(deletedItem);
         }
+
+        public Task<List<Player>> GetPlayersMinScore(int score)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Player>> GetPlayersByItemListSize(int amountOfItems)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Player> UpdatePlayerName(Guid id, string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Item> CreateItemQuery(Guid playerId, Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Player>> GetPlayersByDescendingScore()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

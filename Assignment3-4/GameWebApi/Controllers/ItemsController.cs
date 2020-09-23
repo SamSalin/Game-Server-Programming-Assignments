@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +28,6 @@ namespace GameWebApi.Controllers
                 CreationDate = DateTime.Today
                 //CreationDate = new DateTime(2009, 8, 1, 0, 0, 0)
             };
-            Console.WriteLine("LOLOLOL");
             return _repo.CreateItem(playerId, newItem);
         }
         [HttpGet("/players/{playerId}/items/get/{itemId}")]
@@ -61,5 +61,24 @@ namespace GameWebApi.Controllers
         {
             return _repo.DeleteItem(playerId, itemId);
         }
+
+        //---------Queries------------
+
+        [HttpPost("/players/{playerId}/items/createquery")]
+        public Task<Item> CreateItemQuery(Guid playerId, NewItem item)
+        {
+
+            Item newItem = new Item()
+            {
+                Id = Guid.NewGuid(),
+                Level = item.Level,
+                Type = item.Type,
+                CreationDate = DateTime.Today
+            };
+
+            return _repo.CreateItemQuery(playerId, newItem);
+        }
+
+        //---------------------------
     }
 }
