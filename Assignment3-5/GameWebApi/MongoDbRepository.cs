@@ -113,7 +113,7 @@ namespace GameWebApi
             return getItem;
         }
 
-        //---------Queries------------
+        //---------Queries & Aggregation------------
 
         public async Task<List<Player>> GetPlayersMinScore(int minScore)
         {
@@ -161,6 +161,12 @@ namespace GameWebApi
             List<Player> players = await cursor.ToListAsync();
             return players;
 
+        }
+
+        public async Task<LevelCount[]> GetMostCommonLevel()
+        {
+            var levelCounts = await _playerCollection.Aggregate().Project(p => p.Level).Group(l => l, p => new LevelCount { Id = p.Key, Count = p.Sum() }).SortByDescending(l => l.Count).Limit(3).ToListAsync();
+            return levelCounts.ToArray();
         }
 
         //----------------------------

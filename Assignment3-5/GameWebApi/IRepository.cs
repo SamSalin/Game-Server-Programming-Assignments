@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Driver;
 namespace GameWebApi
 {
     public interface IRepository
@@ -19,6 +21,7 @@ namespace GameWebApi
         Task<Player> UpdatePlayerName(Guid id, string name);
         Task<Item> CreateItemQuery(Guid playerId, Item item);
         Task<List<Player>> GetPlayersByDescendingScore();
+        Task<LevelCount[]> GetMostCommonLevel();
 
         //----------------------------
 

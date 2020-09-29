@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using System.Collections.Generic;
+using MongoDB.Driver;
 
 namespace GameWebApi
 {
@@ -255,6 +256,11 @@ namespace GameWebApi
         }
 
         public Task<List<Player>> GetPlayersByDescendingScore()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<LevelCount[]> GetMostCommonLevel()
         {
             throw new NotImplementedException();
         }

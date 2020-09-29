@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace GameWebApi.Controllers
 {
@@ -55,7 +57,7 @@ namespace GameWebApi.Controllers
             return _repo.Delete(id);
         }
 
-        //---------Queries------------
+        //---------Queries & Aggregation------------
 
         [HttpGet("/players")]
         public Task<List<Player>> GetPlayersMinScore([FromQuery] int minScore)
@@ -79,6 +81,12 @@ namespace GameWebApi.Controllers
         public Task<List<Player>> GetPlayersByDescendingScore()
         {
             return _repo.GetPlayersByDescendingScore();
+        }
+
+        [HttpGet("/players/mostcommonlevel")]
+        public Task<LevelCount[]> GetMostCommonLevel()
+        {
+            return _repo.GetMostCommonLevel();
         }
 
         //----------------------------
